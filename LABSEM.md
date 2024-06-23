@@ -9,15 +9,16 @@ import java.io.*;
 import java.util.*;
 class Main
 {
-public static void main(String[] args)
-{
-double a,b;
-Scanner inp=new Scanner(System.in);
-a=inp.nextDouble();
-b=(a*9/5+32);
-System.out.println("Temperature in Fahrenheit: "+b);
+  public static void main (String[]args)
+  {
+	double a, b;
+	Scanner inp = new Scanner (System.in);
+	  a = inp.nextDouble ();
+	  b = (a * 9 / 5 + 32);
+	  System.out.println ("Temperature in Fahrenheit: " + b);
+  }
 }
-}
+
 -----------------------------------------------------------------------------------------------
 EX 1(b) :
 You are developing a BMI calculator for a health app. During the onboarding process, users
@@ -28,18 +29,19 @@ progress.
 
 import java.io.*;
 import java.util.*;
-class main
+class Main
 {
-public static void main(String[] args)
-{
-double weight,height;
-Scanner sc=new Scanner(System.in);
-weight = sc.nextDouble();
-height = sc.nextDouble();
-double bmi=weight/(height*height);
-System.out.println("Your BMI is: "+(int)bmi);
+  public static void main (String[]args)
+  {
+	double weight, height;
+	Scanner sc = new Scanner (System.in);
+	  weight = sc.nextDouble ();
+	  height = sc.nextDouble ();
+	double bmi = weight / (height * height);
+	  System.out.println ("Your BMI is: " + (int) bmi);
+  }
 }
-}
+
 --------------------------------------------------------------------------------------------------
 EX 1(c) :
 A group of friends explores an ancient code-breaking game. Each player inputs a single
@@ -47,21 +49,21 @@ character, unveiling hidden messages encoded in ASCII. As they decipher symbols,
 uncover clues to an ancient treasure. Help them by Implement a code to find a ascii value of
 a character.
 
-Coding:
 import java.io.*;
 import java.util.*;
-class main
+class Main
 {
-public static void main(String[] args)
-{
-char a;
-Scanner sc=new Scanner(System.in);
-a=sc.next().charAt(0);
-int b=(int)a;
-System.out.println("Character: "+a);
-System.out.println("ASCII value: "+b);
+  public static void main (String[]args)
+  {
+	char a;
+	Scanner sc = new Scanner (System.in);
+	  a = sc.next ().charAt (0);
+	int b = (int) a;
+	  System.out.println ("Character: " + a);
+	  System.out.println ("ASCII value: " + b);
+  }
 }
-}
+
 --------------------------------------------------------------------------------------------------
 EX 1(d) :
 You're tasked with developing a Java program for a binary-to-decimal converter tool. The
@@ -69,19 +71,19 @@ program expects users to input a binary number as a string. After receiving the 
 converts the binary number to its decimal equivalent and prints the decimal value as an
 integer.
 
-Coding:
 import java.io.*;
 import java.util.*;
-class main
+class Main
 {
-public static void main(String[] args)
-{
-Scanner sc=new Scanner(System.in);
-String st=sc.nextLine();
-int a=Integer.parseInt(st,2);
-System.out.println("Decimal value: "+(int)a);
+  public static void main (String[]args)
+  {
+	Scanner sc = new Scanner (System.in);
+	String st = sc.nextLine ();
+	int a = Integer.parseInt (st, 2);
+	  System.out.println ("Decimal value: " + (int) a);
+  }
 }
-}
+
 ------------------------------------------------------------------------------------------------
 EX 1(e) :
 You're tasked with developing a simple currency converter tool. The program should prompt
@@ -90,20 +92,20 @@ Upon input, it calculates and displays the converted amount in EUR. This tool fa
 quick currency conversions, aiding users in international financial transactions and budget
 planning.
 
-Coding:
 import java.io.*;
 import java.util.*;
-public class main
+public class Main
 {
-public static void main(String[] args)
-{
-int a;
-Scanner sc=new Scanner(System.in);
-a=sc.nextInt();
-double b=(a*0.92);
-System.out.println((int)b);
+  public static void main (String[]args)
+  {
+	int a;
+	Scanner sc = new Scanner (System.in);
+	  a = sc.nextInt ();
+	double b = (a * 0.92);
+	  System.out.println ((int) b);
+  }
 }
-}
+
 -----------------------------------------------------------------------------------------------
 EX 2(a) :
 You're developing a retail billing system. Develop a program that calculates the total cost of
@@ -111,87 +113,87 @@ a purchase after applying discounts. If the purchase is over $1000, apply a 10% 
 between $500 and $1000, apply 5%; otherwise, no discount. Prompt users for the purchase
 amount, then display the total cost after discount.
 
-Coding:
 import java.io.*;
 import java.util.*;
-class main
+class Main
 {
-public static void main(String[] args)
-{
-Scanner sc=new Scanner(System.in);
-int a=sc.nextInt();
-if(a>1000)
-{
-System.out.print("Total cost after discount: "+(float)(a-(a*0.1)));
+  public static void main (String[]args)
+  {
+	Scanner sc = new Scanner (System.in);
+	int a = sc.nextInt ();
+	if (a > 1000)
+	  {
+		System.out.print ("Total cost after discount: " + (float) (a - (a * 0.1)));
+	  }
+	else if (a >= 500)
+	  {
+		System.out.print ("Total cost after discount: " + (float) (a - (a * 0.05)));
+	  }
+	else
+	  {
+		System.out.print ("Total cost after discount: " + (float) a);
+	  }
+  }
 }
-else if(a>=500)
-{
-System.out.print("Total cost after discount: "+(float)(a-(a*0.05)));
-}
-else
-{
-System.out.print("Total cost after discount: "+(float)a);
-}
-}
-}
+
 --------------------------------------------------------------------------------------------------
 EX 2(b) :
 You've created a simple program that prompts users to input a number. Once the number is
 entered, the program analyzes it to determine if it's positive, negative, or zero. Based on this
 analysis, it provides immediate feedback to the user regarding the nature of the number.
 
-Coding:
 import java.util.Scanner;
-public class main
+public class Main
 {
-public static void main(String[] args)
-{
-Scanner sc=new Scanner(System.in);
-double num=sc.nextDouble();
-if(num>0)
-{
-System.out.println("The entered number is positive.");
+  public static void main (String[]args)
+  {
+	Scanner sc = new Scanner (System.in);
+	double num = sc.nextDouble ();
+	if (num > 0)
+	  {
+		System.out.println ("The entered number is positive.");
+	  }
+	else if (num < 0)
+	  {
+		System.out.println ("The entered number is negative.");
+	  }
+	else
+	  {
+		System.out.println ("The entered number is zero.");
+	  }
+  }
 }
-else if(num<0)
-{
-System.out.println("The entered number is negative.");
-}
-else
-{
-System.out.println("The entered number is zero.");
-}
-}
-}
+
 --------------------------------------------------------------------------------------------------
 EX 2(c) :
 You're building a geometry tool for analyzing triangles. Design a program that prompts users
 to input the lengths of three sides of a triangle, determines if it's equilateral, isosceles, or
 scalene using if statements, and displays the result.
 
-Coding:
 import java.util.Scanner;
-public class main
+public class Main
 {
-public static void main(String[] args)
-{
-Scanner sc=new Scanner(System.in);
-double a=sc.nextDouble();
-double b=sc.nextDouble();
-double c=sc.nextDouble();
-if(a==b&&b==c)
-{
-System.out.println("The triangle is equilateral.");
+  public static void main (String[]args)
+  {
+	Scanner sc = new Scanner (System.in);
+	double a = sc.nextDouble ();
+	double b = sc.nextDouble ();
+	double c = sc.nextDouble ();
+	if (a == b && b == c)
+	  {
+		System.out.println ("The triangle is equilateral.");
+	  }
+	else if (a == b || b == c || a == c)
+	  {
+		System.out.println ("The triangle is isosceles.");
+	  }
+	else
+	  {
+		System.out.println ("The triangle is scalene.");
+	  }
+  }
 }
-else if(a==b||b==c||a==c)
-{
-System.out.println("The triangle is isosceles.");
-}
-else
-{
-System.out.println("The triangle is scalene.");
-}
-}
-}
+
 -------------------------------------------------------------------------------------------------
 EX 2(d) :
 You're developing a calendar utility to translate numerical representations of weekdays into
@@ -199,89 +201,89 @@ their respective names. Design a program prompting users to input a number repre
 day (1 for Monday, 2 for Tuesday, …, 7 for Sunday), and output the corresponding day name
 using a switch statement.
 
-Coding:
 import java.util.Scanner;
-public class main
+public class Main
 {
-public static void main(String[] args)
-{
-Scanner scanner = new Scanner(System.in);
-int dayNumber = scanner.nextInt();
-String dayName;
-switch (dayNumber)
-{
-case 1:
-dayName = "Monday";
-break;
-case 2:
-dayName = "Tuesday";
-break;
-case 3:
-dayName = "Wednesday";
-break;
-case 4: dayName = "Thursday";
-break;
-case 5:
-dayName = "Friday";
-break;
-case 6:
-dayName = "Saturday";
-break;
-case 7:
-dayName = "Sunday";
-break;
-default:
-dayName = "Invalid day number";
-break;
+  public static void main (String[]args)
+  {
+	Scanner scanner = new Scanner (System.in);
+	int dayNumber = scanner.nextInt ();
+	String dayName;
+	switch (dayNumber)
+	  {
+	  case 1:
+		dayName = "Monday";
+		break;
+		case 2:dayName = "Tuesday";
+		break;
+		case 3:dayName = "Wednesday";
+		break;
+		case 4:dayName = "Thursday";
+		break;
+		case 5:dayName = "Friday";
+		break;
+		case 6:dayName = "Saturday";
+		break;
+		case 7:dayName = "Sunday";
+		break;
+		default:dayName = "Invalid day number";
+		break;
+	  }
+	System.out.println ("The corresponding day is " + dayName);
+	scanner.close ();
+  }
 }
-System.out.println("The corresponding day is " + dayName);
-scanner.close(); } }
+
 ----------------------------------------------------------------------------------------
 EX 3(a) :
 Imagine you're a teacher creating a fun learning tool. With your program, generate
 multiplication tables from 1 to 10 for each number entered. Every loop iteration reveals a
 new set of answers, fostering a deeper understanding of multiplication.
 
-Coding:
 import java.util.Scanner;
-public class main
+public class Main
 {
-public static void main(String[] args)
-{
-Scanner sc=new Scanner(System.in);
-int num=sc.nextInt();
-System.out.println("Multiplication table for "+num+":");
-for(int i=1;i<=10;i++)
-{
-System.out.println(num+" × "+i+" = "+(num*i));
+  public static void main (String[]args)
+  {
+	Scanner sc = new Scanner (System.in);
+	int num = sc.nextInt ();
+	  System.out.println ("Multiplication table for " + num + ":");
+	for (int i = 1; i <= 10; i++)
+	  {
+		System.out.println (num + " C " + i + " = " + (num * i));
+	  }
+  }
 }
-}
-}
+
 -------------------------------------------------------------------------------------------------
 EX 3(b) :
 Imagine you're a mathematical consultant assisting clients with number inquiries. A user
 enters a positive integer, seeking its factors. Implement a program to help the user to find the
 factors the numbers.
 
-Coding:
 import java.io.*;
 import java.util.*;
-class main
+class Main
 {
-public static void main(String[] args){
-int num,fact=1;
-Scanner sc=new Scanner(System.in);
-num=sc.nextInt();
-if(num>0){
-System.out.print("Factors of "+num+": ");
-for(int i=1;i<=num;i++){
-if(num%i==0){
-System.out.print(i+" ");
+  public static void main (String[]args)
+  {
+	int num, fact = 1;
+	Scanner sc = new Scanner (System.in);
+	  num = sc.nextInt ();
+	if (num > 0)
+	  {
+		System.out.print ("Factors of " + num + ": ");
+		for (int i = 1; i <= num; i++)
+		  {
+			if (num % i == 0)
+			  {
+				System.out.print (i + " ");
+			  }
+		  }
+	  }
+  }
 }
-}
-}
-}
-}
+
 ----------------------------------------------------------------------------------------------
 EX 3(c) :
 In a school competition, students are participating in a relay race. The race organizer needs
