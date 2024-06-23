@@ -495,21 +495,23 @@ public class Main
 		{ if (num > max)
 		  {
 		   secondMax = max;
-		   max = num;}
-		   else if (num > secondMax && num != max)
-		   {
-		   secondMax = num;}
-		   }
-		   return secondMax;}
-		   public static void main (String[]args)
-		   {
-		   Scanner scanner = new Scanner (System.in);
-		   int n = scanner.nextInt (); int[]arr = new int[n];
-		   for (int i = 0; i < n; i++)
-		   {
+		   max = num;
+     			}
+			else if (num > secondMax && num != max)
+		   	{
+		  		 secondMax = num;}
+		   	}
+		  	 return secondMax;
+      			}
+		  	 public static void main (String[]args)
+		   	{
+		   	 Scanner scanner = new Scanner (System.in);
+		      int n = scanner.nextInt (); int[]arr = new int[n];
+		      for (int i = 0; i < n; i++)
+		     {
 		   arr[i] = scanner.nextInt ();}
-		   int secondLargest = findSecondLargest (arr);
-		   System.out.println (+secondLargest); scanner.close ();       
+		int secondLargest = findSecondLargest (arr);
+	System.out.println (+secondLargest); scanner.close ();       
 	 }
     }
 -----------------------------------------------------------------------------------------------
