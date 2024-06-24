@@ -742,22 +742,38 @@ class Main
 {
   public static void main (String[]args)
   {
-	Scanner sc = new Scanner (System.in);
-	String n = sc.nextLine ();
-	String w[] = n.split (" ");
-	for (int i = w.length - 1; i >= 0; i--)
+	Scanner inp = new Scanner (System.in);
+	String s = inp.nextLine ();
+	int l = s.length () - 1;
+	int[] arr = new int[123];
+	for (int i = 65; i < 123; i++)
 	  {
-		for (int j = 0; j < w[i].length (); j++)
+		arr[i] = 0;
+	  }
+	for (int i = l; i >= 0; i--)
+	  {
+		if ((s.charAt (i) >= 65 && s.charAt (i) <= 91)
+			|| (s.charAt (i) >= 97 && s.charAt (i) <= 122))
 		  {
-			if (Character.isUpperCase (w[i].charAt (j)))
-			  System.out.print (Character.toLowerCase (w[i].charAt (j)));
-			else if (Character.isLowerCase (w[i].charAt (j)))
-			  System.out.print (Character.toUpperCase (w[i].charAt (j)));
+			if (arr[s.charAt (i)] == 0)
+			  {
+				System.out.print (s.charAt (i));
+				arr[s.charAt (i)]++;
+			  }
 		  }
-		System.out.print (" ");
+		else if (s.charAt (i) == ' ')
+		  {
+			continue;
+		  }
+		else
+		  {
+			System.out.print ("Invalid input");
+			return;
+		  }
 	  }
   }
 }
+
 
 --------------------------------------------------------------------------------------
 EX 9(a) :
