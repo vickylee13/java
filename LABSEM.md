@@ -1,822 +1,637 @@
------------------------------------------------------------------------------------------------
-EX 1(a) :
-Imagine you're a software developer working on a project in a remote village. One day, an
-elderly villager approaches you, intrigued by your work. They share stories of their youth,
-when converting temperatures required complex calculations. Curious, they ask how your
-program, which converts Celsius to Fahrenheit, might have impacted their past.
+1..
 
-import java.io.*;
-import java.util.*;
-class Main
-{
-  public static void main (String[]args)
-  {
-	double a, b;
-	Scanner inp = new Scanner (System.in);
-	  a = inp.nextDouble ();
-	  b = (a * 9 / 5 + 32);
-	  System.out.println ("Temperature in Fahrenheit: " + b);
-  }
-}
-
------------------------------------------------------------------------------------------------
-EX 1(b) :
-You are developing a BMI calculator for a health app. During the onboarding process, users
-are prompted to input their weight and height. Implement a program where users can enter
-their weight in kilograms and height in meters. Your program should then compute and
-display their Body Mass Index (BMI). This tool helps users track their health and fitness
-progress.
-
-import java.io.*;
-import java.util.*;
-class Main
-{
-  public static void main (String[]args)
-  {
-	double weight, height;
-	Scanner sc = new Scanner (System.in);
-	  weight = sc.nextDouble ();
-	  height = sc.nextDouble ();
-	double bmi = weight / (height * height);
-	  System.out.println ("Your BMI is: " + (int) bmi);
-  }
-}
-
---------------------------------------------------------------------------------------------------
-EX 1(c) :
-A group of friends explores an ancient code-breaking game. Each player inputs a single
-character, unveiling hidden messages encoded in ASCII. As they decipher symbols, they
-uncover clues to an ancient treasure. Help them by Implement a code to find a ascii value of
-a character.
-
-import java.io.*;
-import java.util.*;
-class Main
-{
-  public static void main (String[]args)
-  {
-	char a;
-	Scanner sc = new Scanner (System.in);
-	  a = sc.next ().charAt (0);
-	int b = (int) a;
-	  System.out.println ("Character: " + a);
-	  System.out.println ("ASCII value: " + b);
-  }
-}
-
---------------------------------------------------------------------------------------------------
-EX 1(d) :
-You're tasked with developing a Java program for a binary-to-decimal converter tool. The
-program expects users to input a binary number as a string. After receiving the input, it
-converts the binary number to its decimal equivalent and prints the decimal value as an
-integer.
-
-import java.io.*;
-import java.util.*;
-class Main
-{
-  public static void main (String[]args)
-  {
-	Scanner sc = new Scanner (System.in);
-	String st = sc.nextLine ();
-	int a = Integer.parseInt (st, 2);
-	  System.out.println ("Decimal value: " + (int) a);
-  }
-}
-
-------------------------------------------------------------------------------------------------
-EX 1(e) :
-You're tasked with developing a simple currency converter tool. The program should prompt
-users to input an amount in USD and convert it to EUR using a predefined exchange rate.
-Upon input, it calculates and displays the converted amount in EUR. This tool facilitates
-quick currency conversions, aiding users in international financial transactions and budget
-planning.
-
-import java.io.*;
-import java.util.*;
-public class Main
-{
-  public static void main (String[]args)
-  {
-	int a;
-	Scanner sc = new Scanner (System.in);
-	  a = sc.nextInt ();
-	double b = (a * 0.92);
-	  System.out.println ((int) b);
-  }
-}
-
------------------------------------------------------------------------------------------------
-EX 2(a) :
-You're developing a retail billing system. Develop a program that calculates the total cost of
-a purchase after applying discounts. If the purchase is over $1000, apply a 10% discount;
-between $500 and $1000, apply 5%; otherwise, no discount. Prompt users for the purchase
-amount, then display the total cost after discount.
-
-import java.io.*;
-import java.util.*;
-class Main
-{
-  public static void main (String[]args)
-  {
-	Scanner sc = new Scanner (System.in);
-	int a = sc.nextInt ();
-	if (a > 1000)
-	  {
-		System.out.print ("Total cost after discount: " + (float) (a - (a * 0.1)));
-	  }
-	else if (a >= 500)
-	  {
-		System.out.print ("Total cost after discount: " + (float) (a - (a * 0.05)));
-	  }
-	else
-	  {
-		System.out.print ("Total cost after discount: " + (float) a);
-	  }
-  }
-}
-
---------------------------------------------------------------------------------------------------
-EX 2(b) :
-You've created a simple program that prompts users to input a number. Once the number is
-entered, the program analyzes it to determine if it's positive, negative, or zero. Based on this
-analysis, it provides immediate feedback to the user regarding the nature of the number.
 
 import java.util.Scanner;
-public class Main
-{
-  public static void main (String[]args)
-  {
-	Scanner sc = new Scanner (System.in);
-	double num = sc.nextDouble ();
-	if (num > 0)
-	  {
-		System.out.println ("The entered number is positive.");
-	  }
-	else if (num < 0)
-	  {
-		System.out.println ("The entered number is negative.");
-	  }
-	else
-	  {
-		System.out.println ("The entered number is zero.");
-	  }
-  }
-}
+class BMIcalculator {
+    private double weight;
+    private double height;
+    private double bmi;
+    private String grade;
 
---------------------------------------------------------------------------------------------------
-EX 2(c) :
-You're building a geometry tool for analyzing triangles. Design a program that prompts users
-to input the lengths of three sides of a triangle, determines if it's equilateral, isosceles, or
-scalene using if statements, and displays the result.
-
-import java.util.Scanner;
-public class Main
-{
-  public static void main (String[]args)
-  {
-	Scanner sc = new Scanner (System.in);
-	double a = sc.nextDouble ();
-	double b = sc.nextDouble ();
-	double c = sc.nextDouble ();
-	if (a == b && b == c)
-	  {
-		System.out.println ("The triangle is equilateral.");
-	  }
-	else if (a == b || b == c || a == c)
-	  {
-		System.out.println ("The triangle is isosceles.");
-	  }
-	else
-	  {
-		System.out.println ("The triangle is scalene.");
-	  }
-  }
-}
-
--------------------------------------------------------------------------------------------------
-EX 2(d) :
-You're developing a calendar utility to translate numerical representations of weekdays into
-their respective names. Design a program prompting users to input a number representing a
-day (1 for Monday, 2 for Tuesday, …, 7 for Sunday), and output the corresponding day name
-using a switch statement.
-
-import java.util.Scanner;
-public class Main
-{
-  public static void main (String[]args)
-  {
-	Scanner scanner = new Scanner (System.in);
-	int dayNumber = scanner.nextInt ();
-	String dayName;
-	switch (dayNumber)
-	  {
-	  case 1:
-		dayName = "Monday";
-		break;
-		case 2:dayName = "Tuesday";
-		break;
-		case 3:dayName = "Wednesday";
-		break;
-		case 4:dayName = "Thursday";
-		break;
-		case 5:dayName = "Friday";
-		break;
-		case 6:dayName = "Saturday";
-		break;
-		case 7:dayName = "Sunday";
-		break;
-		default:dayName = "Invalid day number";
-		break;
-	  }
-	System.out.println ("The corresponding day is " + dayName);
-	scanner.close ();
-  }
-}
-
-----------------------------------------------------------------------------------------
-EX 3(a) :
-Imagine you're a teacher creating a fun learning tool. With your program, generate
-multiplication tables from 1 to 10 for each number entered. Every loop iteration reveals a
-new set of answers, fostering a deeper understanding of multiplication.
-
-import java.util.Scanner;
-public class Main
-{
-  public static void main (String[]args)
-  {
-	Scanner sc = new Scanner (System.in);
-	int num = sc.nextInt ();
-	  System.out.println ("Multiplication table for " + num + ":");
-	for (int i = 1; i <= 10; i++)
-	  {
-		System.out.println (num + " C " + i + " = " + (num * i));
-	  }
-  }
-}
-
--------------------------------------------------------------------------------------------------
-EX 3(b) :
-Imagine you're a mathematical consultant assisting clients with number inquiries. A user
-enters a positive integer, seeking its factors. Implement a program to help the user to find the
-factors the numbers.
-
-import java.io.*;
-import java.util.*;
-class Main
-{
-  public static void main (String[]args)
-  {
-	int num, fact = 1;
-	Scanner sc = new Scanner (System.in);
-	  num = sc.nextInt ();
-	if (num > 0)
-	  {
-		System.out.print ("Factors of " + num + ": ");
-		for (int i = 1; i <= num; i++)
-		  {
-			if (num % i == 0)
-			  {
-				System.out.print (i + " ");
-			  }
-		  }
-	  }
-  }
-}
-
-----------------------------------------------------------------------------------------------
-EX 3(c) :
-In a school competition, students are participating in a relay race. The race organizer needs
-to arrange batons for each team. They have batons in sets, where each set contains a
-certain number of batons. However, they need to find out the minimum number of sets
-required to distribute an equal number of batons to each team. Implement a program to help
-the race organizer find the minimum number of sets required to distribute batons equally
-among all teams. Assume that each team requires the same number of batons, and the
-number of batons in each set and the number of teams are provided as inputs
-
-import java.util.Scanner;
-public class Main
-{
-  public static int findLCM (int num1, int num2)
-  {
-	int lcm = (num1 > num2) ? num1 : num2;
-	while (true)
-	  {
-		if (lcm % num1 == 0 && lcm % num2 == 0)
-		  {
-			return lcm;
-		  }
-		lcm++;
-	  }
-  }
-  public static void main (String[]args)
-  {
-	Scanner scanner = new Scanner (System.in);
-	int num1 = scanner.nextInt ();
-	int num2 = scanner.nextInt ();
-	int lcm = findLCM (num1, num2);
-	System.out.println (+lcm);
-	scanner.close ();
-  }
-}
-
--------------------------------------------------------------------------------------------
-EX 3(d) :
-You're tasked with developing a tool that computes squares of numbers within specified
-limits. Imagine you're embarking on a journey through the realm of numbers, exploring their
-squares. Implement a program using a do-while loop to iterate through these numbers,
-uncovering their squares along the way.
-
-import java.io.*;
-import java.util.*;
-public class Main
-{
-  public static void main (String args[])
-  {
-	Scanner sc = new Scanner (System.in);
-	int lim = sc.nextInt ();
-	  System.out.print ("Squares of numbers from 1 to " + lim + ": ");
-	for (int i = 1; i <= lim; i++)
-	  {
-		System.out.print ((i * i) + " ");
-	  }
-  }
-}
-
------------------------------------------------------------------------------------------------
-EX 4(a) :
-Imagine you're a curious explorer delving into the world of prime numbers. Envision seekers
-inputting their chosen numbers eagerly. Implement a program to traverse through each
-number's factors up to its square root, determining its primality. Each iteration brings you
-closer to unraveling the mysteries of prime numbers.
-
-import java.io.*;
-import java.util.*;
-class Main
-{
-  public static void main (String[]args)
-  {
-	int num, div;
-	Scanner sc = new Scanner (System.in);
-	  num = sc.nextInt ();
-	for (int i = 2; i < num - 1; i++)
-	  {
-		div = num % i;
-		if (div == 0)
-		  {
-			System.out.println (num + " is not a prime number.");
-			break;
-		  }
-		else
-		  {
-			System.out.println (num + " is a prime number.");
-			break;
-		  }
-	  }
-  }
-}
-
--------------------------------------------------------------------------------------------
-EX 4(b) :
-Imagine you're a software developer creating a tool for numerical transformations. A user,
-fascinated by number manipulation, inputs a positive integer. Implement a program to
-gracefully reverse the digits of their number using a while loop, providing them with the
-mirror image of their input for exploration
-
-import java.util.*;
-class Main
-{
-  public static void main (String[]args)
-  {
-	Scanner sc = new Scanner (System.in);
-	int a = sc.nextInt ();
-	int rev = 0;
-	if (a > 0)
-	  {
-		while (a != 0)
-		  {
-			int rem = a % 10;
-			  rev = rev * 10 + rem;
-			  a /= 10;
-		  }
-		System.out.println ("Reversed number: " + rev);
-	  }
-	else
-	  {
-		System.out.println ("Error: Please enter a positive integer.");
-	  }
-  }
-}
-
-----------------------------------------------------------------------------------------
-EX 5(a) :
-Imagine you're developing software for a weather monitoring station. You're tasked with
-creating a program to analyze temperature data stored in an array of doubles. Your goal is to
-determine the maximum temperature recorded and its corresponding time index.
-
-import java.util.*;
-class Main
-{
-  public static void main (String[]args)
-  {
-	Scanner sc = new Scanner (System.in);
-	int a = sc.nextInt ();
-	double[] arr;
-	int b = 0;
-	  arr = new double[a];
-	for (int i = 0; i < a; i++)
-	  {
-		arr[i] = sc.nextDouble ();
-	  }
-	double max = arr[0];
-	for (int i = 0; i < a; i++)
-	  {
-		if (max < arr[i])
-		  {
-			max = arr[i];
-			b = i;
-		  }
-	  }
-	System.out.println ("Maximum Temperature: " + max);
-	System.out.println ("Index of Maximum Temperature: " + b);
-  }
-}
-
-------------------------------------------------------------------------------------------
-EX 5(b) :
-You're developing software for a temperature monitoring system. Your task is to create a
-program that analyzes temperature data stored in an array of integers. The program finds
-the highest recorded temperature, along with its index.
-
-import java.util.*;
-class Main
-{
-  public static void main (String args[])
-  {
-	int a;
-	Scanner sc = new Scanner (System.in);
-	  a = sc.nextInt ();
-	int[] n = new int[a];
-	for (int i = 0; i < a; i++)
-	  {
-		n[i] = sc.nextInt ();
-	  }
-	int y = 0, x = n[0];
-	for (int i = 0; i < a; i++)
-	  {
-		if (n[i] > x)
-		  {
-			x = n[i];
-			y = i;
-		  }
-	  }
-	System.out.println ("Maximum Element: " + x);
-	System.out.println ("Index of Maximum Element: " + y);
-  }
-}
-
---------------------------------------------------------------------------------------------
-EX 5(c) :
-Suppose you are building a leaderboard for a gaming competition. You need to determine
-the player who achieved the second-highest score. Develop a program to find the
-second-highest score from an array of player scores. Ensure that your program handles
-scenarios where there might be ties for the highest score and ensures that the
-second-highest score is accurately identified. Test your program with various test cases to
-verify its correctness.
-
-import java.util.Scanner;
-public class Main
-{
-  public static int findSecondLargest (int[]arr)
-  {
-	int max = Integer.MIN_VALUE;
-	int secondMax = Integer.MIN_VALUE;
-	for (int num:arr)
-		{ if (num > max)
-		  {
-		   secondMax = max;
-		   max = num;
-     			}
-			else if (num > secondMax && num != max)
-		   	{
-		  		 secondMax = num;}
-		   	}
-		  	 return secondMax;
-      			}
-		  	 public static void main (String[]args)
-		   	{
-		   	 Scanner scanner = new Scanner (System.in);
-		      int n = scanner.nextInt (); int[]arr = new int[n];
-		      for (int i = 0; i < n; i++)
-		     {
-		   arr[i] = scanner.nextInt ();}
-		int secondLargest = findSecondLargest (arr);
-	System.out.println (+secondLargest); scanner.close ();       
-	 }
+    public BMIcalculator(double weight, double height) {
+        this.weight = weight;
+        this.height = height;
+        this.bmi = calculateBMI();
+        this.grade = calculateGrade();
     }
------------------------------------------------------------------------------------------------
-EX 6(a) :
-You're developing software for a financial analytics tool. Your task is to design a program to
-process a dataset stored in a 2D array of integers. The program calculates the total value of
-all entries in the dataset and prints the result.
 
-import java.util.*;
-class Main
-{
-  public static void main (String[]args)
-  {
-	Scanner sc = new Scanner (System.in);
-	int sum = 0;
-	while (sc.hasNextLine ())
-	  {
-		String line = sc.nextLine ();
-		if (line.isEmpty ())
-		  {
-			break;
-		  }
-		String[] n = line.split (" ");
-	  for (String num:n)
-		  {
-			sum += Integer.parseInt (num);
-		  }
-	  }
-	System.out.println ("Sum of all elements in the 2D array: " + sum);
-  }
-}
+    private double calculateBMI() {
+        return weight / (height * height);
+    }
 
-------------------------------------------------------------------------------------------------
-EX 6(b) :
-You're developing a data analysis tool for financial data. Your task is to develop a program to
-process a dataset stored in a 2D array of doubles. The program identifies the highest value
-in the dataset, along with its corresponding row and column indices.
+    private String calculateGrade() {
+        if (bmi < 18.5) {
+            return "U";
+        } else if (bmi >= 18.5 && bmi < 25) {
+            return "N";
+        } else if (bmi >= 25 && bmi < 30) {
+            return "H";
+        } else {
+            return "O";
+        }
+    }
 
-import java.util.*;
-class Main
-{
-  public static void main (String[]args)
-  {
-	Scanner sc = new Scanner (System.in);
-	int a = sc.nextInt ();
-	int b = sc.nextInt ();
-	double[][] arr;
-	int n = 0, m = 0;
-	  arr = new double[a][b];
-	for (int i = 0; i < a; i++)
-	  {
-		for (int j = 0; j < b; j++)
-		  {
-			arr[i][j] = sc.nextDouble ();
-		  }
-	  }
-	double max = arr[0][0];
-	for (int i = 0; i < a; i++)
-	  {
-		for (int j = 0; j < b; j++)
-		  {
-			if (max < arr[i][j])
-			  {
-				max = arr[i][j];
-				n = i;
-				m = j;
-			  }
-		  }
-	  }
-	System.out.println ("Maximum Element: " + max);
-	System.out.println ("Row Index of Maximum Element: " + n);
-	System.out.println ("Column Index of Maximum Element: " + m);
-  }
-}
+    public void displayBMI() {
+        System.out.print(grade);
+    }
 
------------------------------------------------------------------------------------------
-EX 6(c) :
-You're developing software for a scientific data analysis tool. Your task is to design a
-program to process matrices. The program initializes a 2D array representing a matrix and
-computes its transpose, providing both the original and transposed matrices for further
-analysis.
-
-import java.util.*;
-class Main
-{
-  public static void main (String args[])
-  {
-	int m, n;
-	Scanner sc = new Scanner (System.in);
-	  n = sc.nextInt ();
-	  m = sc.nextInt ();
-	int[][] a = new int[n][m];
-	for (int i = 0; i < n; i++)
-	  {
-		for (int j = 0; j < m; j++)
-		  {
-			a[i][j] = sc.nextInt ();
-		  }
-	  }
-	System.out.println ("Original Matrix:");
-	for (int i = 0; i < n; i++)
-	  {
-		for (int j = 0; j < m; j++)
-		  {
-			System.out.print (a[i][j] + " ");
-		  }
-		System.out.println ("");
-	  }
-	System.out.println ("Transposed Matrix:");
-	for (int i = 0; i < m; i++)
-	  {
-		for (int j = 0; j < n; j++)
-		  {
-			System.out.print (a[j][i] + " ");
-		  }
-		System.out.println ("");
-	  }
-  }
-}
-
--------------------------------------------------------------------------------------------------
-EX 7(a) :
-As a linguistic data analyst, you're developing a Text Refinement Tool to process text inputs.
-Users expect the tool to remove duplicate characters and count occurrences of vowels for
-linguistic analysis. The tool accepts a string as input and redefines it, presenting the refined
-text without duplicate characters and providing counts of vowels. Design a program that
-meets these requirements efficiently.
-
-import java.util.*;
-public class Main
-{
-  public static void main (String[]args)
-  {
-	Scanner sc = new Scanner (System.in);
-	String st = sc.nextLine ();
-	int a = 0, e = 0, ii = 0, o = 0, u = 0, c = 0;
-	for (int i = 0; i < st.length (); i++)
-	  {
-		char ch = st.charAt (i);
-		if (ch == 'A' || ch == 'a')
-		  a++;
-		else if (ch == 'E' || ch == 'e')
-		  e++;
-		else if (ch == 'I' || ch == 'i')
-		  ii++;
-		else if (ch == 'O' || ch == 'o')
-		  o++;
-		else if (ch == 'U' || ch == 'u')
-		  u++;
-		else
-		    c++;
-	  }
-	String str = " ";
-	for (int i = 0; i < st.length (); i++)
-	  {
-		int f = 0;
-		for (int j = 0; j < str.length (); j++)
-		  {
-			if (st.charAt (i) == str.charAt (j))
-			  {
-				f += 1;
-			  }
-		  }
-		if ((f == 0) && (st.charAt (i) != ' '))
-		  {
-			str = str + st.charAt (i);
-		  }
-	  }
-	System.out.println (str);
-	if (c != st.length ())
-	  {
-		if (a > 0)
-		  System.out.println ("a" + a);
-		if (e > 0)
-		  System.out.println ("e" + e);
-		if (ii > 0)
-		  System.out.println ("i" + ii);
-		if (o > 0)
-		  System.out.println ("o" + o);
-		if (u > 0)
-		  System.out.println ("u" + u);
-	  }
-	else
-	  {
-		System.out.println ("No vowels found.");
-	  }
-  }
-}
-
---------------------------------------------------------------------------------------------------
-EX 7(b) :
-You are tasked with enhancing a popular text-editing app with a new feature to stylize text for
-a more captivating presentation. With the app's extensive user base, efficiency and
-performance are critical considerations. Users desire a feature that reverses the word order
-of their input sentence while alternating the case of each letter, starting with uppercase for a
-visually engaging effect.
-
-import java.util.*;
-class Main
-{
-  public static void main (String[]args)
-  {
-	Scanner sc = new Scanner (System.in);
-	String n = sc.nextLine ();
-	String w[] = n.split (" ");
-	for (int i = w.length - 1; i >= 0; i--)
-	  {
-		for (int j = 0; j < w[i].length (); j++)
-		  {
-			if (Character.isUpperCase (w[i].charAt (j)))
-			  System.out.print (Character.toLowerCase (w[i].charAt (j)));
-			else if (Character.isLowerCase (w[i].charAt (j)))
-			  System.out.print (Character.toUpperCase (w[i].charAt (j)));
-		  }
-		System.out.print (" ");
-	  }
-  }
-}
-
-------------------------------------------------------------------------------------------------
-EX 7(c) :
-You're developing a tool that reverse a given string S, such that the reversed string does not
-contain any repeated characters or spaces. The program should eliminate any duplicate
-characters and spaces while reversing the string.
-
-import java.util.*;
-class Main
-{
-  public static void main (String[]args)
-  {
-	Scanner inp = new Scanner (System.in);
-	String s = inp.nextLine ();
-	int l = s.length () - 1;
-	int[] arr = new int[123];
-	for (int i = 65; i < 123; i++)
-	  {
-		arr[i] = 0;
-	  }
-	for (int i = l; i >= 0; i--)
-	  {
-		if ((s.charAt (i) >= 65 && s.charAt (i) <= 91)
-			|| (s.charAt (i) >= 97 && s.charAt (i) <= 122))
-		  {
-			if (arr[s.charAt (i)] == 0)
-			  {
-				System.out.print (s.charAt (i));
-				arr[s.charAt (i)]++;
-			  }
-		  }
-		else if (s.charAt (i) == ' ')
-		  {
-			continue;
-		  }
-		else
-		  {
-			System.out.print ("Invalid input");
-			return;
-		  }
-	  }
-  }
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double weight = scanner.nextDouble();
+        double height = scanner.nextDouble();
+        BMIcalculator bmiCalculator = new BMIcalculator(weight, height);
+        bmiCalculator.displayBMI();
+    }
 }
 
 
---------------------------------------------------------------------------------------
-EX 9(a) :
-Imagine you're developing a utility to determine users' current ages for a registration
-platform. Develop a program that prompts users to input their birth year.
 
-import java.util.*;
-import java.time.*;
-class Main
-{
-  public static void main (String[]args)
-  {
-	int year;
-	Scanner sc = new Scanner (System.in);
-	  year = sc.nextInt ();
-	if (year < 0)
-	  {
-		System.out.println ("Invalid input. Birth year cannot be negative.");
-	  }
-	else
-	  {
-		int cd = LocalDate.now ().getYear ();
-		System.out.print (cd - year);
-	  }
-  }
+
+2.
+
+import java.util.Scanner;
+
+class Overloading {
+    private String name;
+    private String day;
+    private int temp;
+
+    // Default constructor
+    public Overloading() {
+        this.name = "Argentina";
+        this.day = "Yesterday";
+        this.temp = 29;
+    }
+
+    // Parameterized constructor 1
+    public Overloading(String name, int temp) {
+        this.name = name;
+        this.day = "Today";
+        this.temp = temp;
+    }
+
+    // Parameterized constructor 2
+    public Overloading(String name, String day, int temp) {
+        this.name = name;
+        this.day = day;
+        this.temp = temp;
+    }
+
+    public void display() {
+        System.out.println(name + " " + day + " Temperature: " + temp + "\u00B0");
+    }
 }
 
----------------------------------------------------------------------------------------------
-EX 9(b) :
-In a financial application, Your task is to implement a function to round transaction amounts
-to the nearest integer to ensure accurate representation of monetary values in reports and
-accounting records.
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Default constructor call
+        Overloading defaultObj = new Overloading();
+        defaultObj.display();
+
+        // First parameterized constructor
+        String name1 = scanner.next();
+        int temp1 = scanner.nextInt();
+        Overloading paramObj1 = new Overloading(name1, temp1);
+        paramObj1.display();
+
+        // Second parameterized constructor
+        String name2 = scanner.next();
+        String day2 = scanner.next();
+        int temp2 = scanner.nextInt();
+        Overloading paramObj2 = new Overloading(name2, day2, temp2);
+        paramObj2.display();
+
+        scanner.close();
+    }
+
+
+
+
+3.
 
 import java.util.*;
-class Main
-{
-  public static void main (String[]args)
-  {
-	Scanner sc = new Scanner (System.in);
-	float a = sc.nextFloat ();
-	int b = Math.round (a);
-	  System.out.print ("Rounded number: " + b);
-  }
+
+class PasswordValidation {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String password = sc.nextLine();
+
+        if (password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%^&+=]).{8,}$"))
+            System.out.println("Valid password");
+        else
+            System.out.println("Invalid password");
+    }
 }
 
------------------------------------------------------------------------------------------------
+4.
+
+
+import java.util.Scanner;
+
+class Person {
+    String name, gender;
+    int age;
+
+    Person(String name, int age, String gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+    }
+}
+
+class Student extends Person {
+    int studentId;
+    String course, major;
+    int year;
+
+    Student(String name, int age, String gender, int studentId, String course, String major, int year) {
+        super(name, age, gender);
+        this.studentId = studentId;
+        this.course = course;
+        this.major = major;
+        this.year = year;
+    }
+
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Gender: " + gender);
+        System.out.println("Student ID: " + studentId);
+        System.out.println("Course Enrollment: " + course);
+        System.out.println("Major: " + major);
+        System.out.println("Year of Study: " + year);
+    }
+}
+
+public class InheritanceExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String name = sc.nextLine();
+        int age = sc.nextInt();
+        sc.nextLine();
+
+        String gender = sc.nextLine();
+        int studentId = sc.nextInt();
+        sc.nextLine();
+
+        String course = sc.nextLine();
+
+        String major = sc.nextLine();
+
+        int year = sc.nextInt();
+
+        Student student = new Student(name, age, gender, studentId, course, major, year);
+        student.display();
+    }
+}
+
+
+5.
+
+
+
+import java.util.Scanner;
+
+class Gift {
+    protected int amount;
+
+    public Gift(int amount) {
+        this.amount = amount;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+}
+
+class Mobile extends Gift {
+    public Mobile(int amount) {
+        super(amount);
+    }
+}
+
+class Laptop extends Gift {
+    public Laptop(int amount) {
+        super(amount);
+    }
+}
+
+class Bike extends Gift {
+    public Bike(int amount) {
+        super(amount);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int mobileLaptopAmount = scanner.nextInt();
+        int bikeAmount = scanner.nextInt();
+
+        Mobile mobile = new Mobile(mobileLaptopAmount);
+        Laptop laptop = new Laptop(mobileLaptopAmount);
+        Bike bike = new Bike(bikeAmount);
+
+        int TotalGiftAmount = mobile.getAmount() + laptop.getAmount() + bike.getAmount();
+        System.out.println("Total amount of gifts: " + TotalGiftAmount);
+    }
+}
+
+
+6..
+
+ import java.io.*;
+import java.util.*;
+import java.lang.Math;
+abstract class maths {
+    abstract public void rectanglePerimeter();
+    abstract public void squarePerimeter();
+    abstract public void trianglePerimeter();
+    abstract public void trapezoidPerimeter();
+    abstract public void circlePerimeter();
+}
+class perimeter extends maths {
+    public int length;
+    public int breadth;
+    public int side;
+    public int t1;
+    public int t2;
+    public int t3;
+    public int tr1;
+    public int tr2;
+    public int tr3;
+    public int tr4;
+    public int radius;
+    public int [] peri= new int[5];
+    public void rectanglePerimeter() {
+        this.peri[0] = 2*(length+breadth);
+        System.out.println(this.peri[0]);
+    }
+    public void squarePerimeter() {
+        this.peri[1] = 4*side;
+        System.out.println(this.peri[1]);
+    }
+    public void trianglePerimeter() {
+        this.peri[2] = t1+t2+t3;
+        System.out.println(this.peri[2]);
+    }
+    public void trapezoidPerimeter() {
+        this.peri[3] = tr1+tr2+tr3+tr4;
+        System.out.println(this.peri[3]);
+    }
+    public void circlePerimeter() {
+        this.peri[4] = (int) Math.PI*2*radius;
+        System.out.println(this.peri[4]);
+    }
+    public void calculateSum() {
+    int sum = 0,i;
+    for(i=0;i<5;i++) {
+        sum += this.peri[i];
+    }
+    System.out.println(sum);
+    }
+    public void sortPerimeter() {
+        Arrays.sort(this.peri);
+        for(int i=0;i<5;i++) {
+            System.out.print(this.peri[i]+" ");
+        }
+    }
+}
+class Main {
+    public static void main(String [] args) {
+        perimeter p = new perimeter();
+        Scanner sc = new Scanner(System.in);
+        p.length = sc.nextInt();
+        p.breadth = sc.nextInt();
+        p.rectanglePerimeter();
+        p.side = sc.nextInt();
+        p.squarePerimeter();
+        p.t1 = sc.nextInt();
+        p.t2 = sc.nextInt();
+        p.t3 = sc.nextInt();
+        p.trianglePerimeter();
+        p.tr1 = sc.nextInt();
+        p.tr2 = sc.nextInt();
+        p.tr3 = sc.nextInt();
+        p.tr4 = sc.nextInt();
+        p.trapezoidPerimeter();
+        p.radius = sc.nextInt();
+        p.circlePerimeter();
+        p.calculateSum();
+        p.sortPerimeter();
+    }
+} 
+
+
+7..
+
+
+import java.util.NoSuchElementException;
+import java.util.Scanner;
+
+class InvalidInputException extends Exception {
+    public InvalidInputException(String message) {
+        super(message);
+    }
+}
+
+class main {
+    public static void validate(String regNo, String mobileNo) throws InvalidInputException {
+        if (!regNo.matches("\\d{2}[A-Z]{3}\\d{4}")) {
+            throw new InvalidInputException("Register Number does not contain exactly 9 characters");
+        }
+        if (mobileNo.length() != 10) {
+            throw new InvalidInputException("Mobile Number does not contain exactly 10 characters");
+        }
+        if (!mobileNo.matches("\\d{10}")) {
+            throw new InvalidInputException("Mobile Number cannot contain any character other than a digit");
+        }
+        if (!regNo.matches("[0-9A-Z]+")) {
+            throw new InvalidInputException("Registration Number cannot contain any character other than digits and alphabets in format specified");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String regNo = scanner.nextLine();
+        String mobileNo = scanner.nextLine();
+
+       try {
+            validate(regNo, mobileNo);
+            System.out.println("Valid");
+        } catch (Exception e) {
+            System.out.println("Invalid");
+            System.out.println(e.getMessage());
+        }
+    }
+}
+
+
+
+8.
+
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Scanner;
+
+public class IncreasingSequence {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int N = scanner.nextInt();
+        List<Integer> list = new ArrayList<>();
+
+        for (int i = 0; i < N; i++) {
+            int num = scanner.nextInt();
+            if (list.isEmpty() || num > list.get(list.size() - 1)) {
+                list.add(num);
+            }
+        }
+
+        System.out.println(list);
+    }
+}
+
+
+
+9.
+
+
+
+import java.util.HashSet;
+import java.util.Scanner;
+import java.util.Set;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input string
+        String input = scanner.nextLine();
+
+        // Split the input string into words
+        String[] words = input.split(" ");
+
+        // Use HashSet to store unique words
+        Set<String> uniqueWords = new HashSet<>();
+
+        // Add words to the HashSet
+        for (String word : words) {
+            uniqueWords.add(word.toLowerCase()); // Convert to lowercase to count words case-insensitively
+        }
+
+        // Output the count of unique words
+        System.out.println(uniqueWords.size());
+
+        scanner.close();
+    }
+}
+
+
+
+10.
+
+import java.util.Scanner;
+
+class Counter {
+    int count = 0;
+
+    synchronized void increment() {
+        count++;
+    }
+}
+
+ class ThreadSafeCounter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int T = scanner.nextInt();
+        int N = scanner.nextInt();
+
+        Counter counter = new Counter();
+
+        Thread[] threads = new Thread[T];
+
+        for (int i = 0; i < T; i++) {
+            threads[i] = new Thread(() -> {
+                for (int j = 0; j < N; j++) {
+                    counter.increment();
+                }
+            });
+            threads[i].start();
+        }
+
+        for (int i = 0; i < T; i++) {
+            try {
+                threads[i].join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        System.out.println("Final counter value: " + counter.count);
+    }
+}
+
+
+11.
+
+import java.sql.*;
+import java.util.*;
+
+class EmployeeDetails {
+    public static void main(String[] args) {
+        // Database connection details
+        String url = "jdbc:mysql://localhost/ri_db";
+        String user = "test";
+        String password = "test123";
+
+        // Scanner for user input
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            System.out.print("Enter Employee ID: ");
+            int empId = scanner.nextInt(); // Read employee ID
+            scanner.nextLine(); // Consume newline
+
+            System.out.print("Enter Department: ");
+            String department = scanner.nextLine(); // Read department
+
+            // Establish connection to the database
+            Connection connection = DriverManager.getConnection(url, user, password);
+
+            // SQL query to retrieve employee details
+            String query = "SELECT * FROM COMPANY WHERE empid = ? AND department = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+
+            // Set values for the query parameters
+            preparedStatement.setInt(1, empId);
+            preparedStatement.setString(2, department);
+
+            // Execute the query
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            // Process the result
+            if (resultSet.next()) {
+                int id = resultSet.getInt("empid");
+                String empname = resultSet.getString("empname");
+                String dep = resultSet.getString("department");
+                String addr = resultSet.getString("address");
+                double sal = resultSet.getDouble("salary");
+
+                System.out.println("Employee ID: " + id);
+                System.out.println("Employee Name: " + empname);
+                System.out.println("Department: " + dep);
+                System.out.println("Address: " + addr);
+                System.out.printf("Salary: %.2f",sal);
+            } else {
+                System.out.println("No employees found with the given criteria.");
+            }
+
+            // Close resources
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+        } catch (Exception e) {
+            e.printStackTrace(); // Print exception details
+        }
+    }
+}
+
+
+12.
+
+
+NO ANSWER SERVLETS 
+
+
+
+13.
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import javax.swing.*;
+public class StudentForm extends JFrame {
+    public StudentForm() {
+        setTitle("Student Form");
+        setSize(300, 250);
+        setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
+
+        JTextField nameField = new JTextField(20);
+        JTextField regnoField = new JTextField(20);
+        JTextField cgpaField = new JTextField(20);
+        JCheckBox maleCheckbox = new JCheckBox("Male");
+        JCheckBox femaleCheckbox = new JCheckBox("Female");
+
+        maleCheckbox.addActionListener(e -> femaleCheckbox.setSelected(!maleCheckbox.isSelected()));
+        femaleCheckbox.addActionListener(e -> maleCheckbox.setSelected(!femaleCheckbox.isSelected()));
+
+        JButton submitButton = new JButton("Submit");
+        submitButton.addActionListener((ActionEvent e) -> JOptionPane.showMessageDialog(null, "Welcome!"));
+
+        add(new JLabel("Name:")); add(nameField);
+        add(new JLabel("Regno:")); add(regnoField);
+        add(new JLabel("CGPA:")); add(cgpaField);
+        add(new JLabel("Gender:")); add(maleCheckbox); add(femaleCheckbox);
+        add(submitButton);
+    }
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> new StudentForm().setVisible(true));
+    }
+}
+
+
+13 ANS 2
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class StudentForm extends JFrame {
+    public StudentForm() {
+        setTitle("Student Form");
+        setSize(300, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new GridLayout(5, 2));
+
+        JLabel nameLabel = new JLabel("Name:");
+        JTextField nameField = new JTextField();
+        JLabel regnoLabel = new JLabel("Regno:");
+        JTextField regnoField = new JTextField();
+        JLabel cgpaLabel = new JLabel("CGPA:");
+        JTextField cgpaField = new JTextField();
+
+        JCheckBox maleCheckbox = new JCheckBox("Male");
+        JCheckBox femaleCheckbox = new JCheckBox("Female");
+
+        JButton submitButton = new JButton("Submit");
+
+        submitButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(null, "Welcome");
+            }
+        });
+
+        add(nameLabel);
+        add(nameField);
+        add(regnoLabel);
+        add(regnoField);
+        add(cgpaLabel);
+        add(cgpaField);
+        add(maleCheckbox);
+        add(femaleCheckbox);
+        add(submitButton);
+
+        setVisible(true);
+    }
+
+    public static void main(String[] args) {
+        new StudentForm();
+    }
+}
